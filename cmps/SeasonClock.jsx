@@ -1,10 +1,13 @@
 const { useState } = React;
 
 export function SeasonClock() {
+  const [isDark, setIsDark] = useState(true);
+
   let now = new Date();
   let month = now.getMonth() + 1; // Months are zero-based
   let monthName = now.toLocaleDateString('en-US', { month: 'long' });
   let dayName = now.toLocaleDateString('en-US', { weekday: 'long' });
+  let nowString = now.toLocaleTimeString();
   let seasonName = (mon => {
     if (mon >= 3 && mon <= 5) return 'Spring';
     else if (mon >= 6 && mon <= 8) return 'Summer';
@@ -13,7 +16,11 @@ export function SeasonClock() {
   })(month);
 
   return (
-    <div className={`season-clock`}>
+    <button
+      className={`season-clock ${isDark ? 'dark' : ''}`}
+      onClick={() => setIsDark(!isDark)}
+    >
+      <h1>{isDark ? '🌙' : '☀️'}</h1>
       <h2>
         {monthName} ({seasonName})
       </h2>
@@ -22,6 +29,7 @@ export function SeasonClock() {
         alt={seasonName}
       />
       <h3>{dayName}</h3>
-    </div>
+      <h4>{nowString}</h4>
+    </button>
   );
 }
