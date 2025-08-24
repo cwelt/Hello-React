@@ -28,6 +28,14 @@ export function AnimalList({ animalInfos = animalsDemoData }) {
           </tr>
         ))}
       </tbody>
+      <tfoot>
+        <tr>
+          <th scope="row">Total</th>
+          <td colspan="2">
+            {animalInfos.reduce((acc, animal) => acc + animal.count, 0)}
+          </td>
+        </tr>
+      </tfoot>
     </table>
   );
 }
