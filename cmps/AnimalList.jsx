@@ -22,7 +22,10 @@ export function AnimalList({ animalInfos = animalsDemoData }) {
               <th scope="row">{animal.type}</th>
               <td>{animal.count}</td>
               <td>
-                <a href={`https://www.google.com/search?q=${animal.type}`}>
+                <a
+                  target="_blank"
+                  href={`https://www.google.com/search?q=${animal.type}`}
+                >
                   Search
                 </a>
               </td>
