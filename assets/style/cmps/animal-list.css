@@ -1,0 +1,48 @@
+table {
+  border: 2px solid rgb(140 140 140);
+  font: 20px 'Open Sans', Helvetica, Arial, sans-serif;
+  font-family: 'Edu VIC WA NT Beginner', cursive;
+  text-align: left;
+}
+
+table caption {
+  font-size: 1.5em;
+  margin: 0.5em 0 0.75em;
+  font-weight: bold;
+}
+
+table th,
+table td {
+  border: 1px solid rgb(160 160 160);
+  padding: 0.5em 1em;
+  text-align: left;
+}
+
+thead tr,
+tfoot tr {
+  background-color: var(--red1);
+}
+
+table tbody th,
+table tbody td {
+  background-color: var(--red2);
+}
+
+a {
+  text-decoration: underline; /* Removes underline */
+  color: #003e6a; /* Sets a nice blue color */
+  font-weight: bold; /* Makes the text bold */
+  padding: 6px 12px; /* Adds some spacing */
+  transition: all 0.3s ease; /* Smooth hover effect */
+}
+
+a:hover {
+  background-color: var(--red3); /* Fills background on hover */
+  color: whitesmoke; /* Changes text color */
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2); /* Adds subtle shadow */
+}
+
+.animal-list {
+  border: 3px solid black;
+  display: inline-block;
+}
