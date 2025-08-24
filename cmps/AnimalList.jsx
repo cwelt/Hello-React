@@ -35,7 +35,7 @@ export function AnimalList({ animalInfos = animalsDemoData }) {
         <tfoot>
           <tr>
             <th scope="row">Total</th>
-            <td colspan="2">
+            <td colSpan={2}>
               {animalInfos.reduce((acc, animal) => acc + animal.count, 0)}
             </td>
           </tr>
