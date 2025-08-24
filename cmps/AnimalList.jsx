@@ -6,36 +6,38 @@ const animalsDemoData = [
 
 export function AnimalList({ animalInfos = animalsDemoData }) {
   return (
-    <table>
-      <caption>Rare Animals</caption>
-      <thead>
-        <tr>
-          <th scope="col">Type</th>
-          <th scope="col">Count</th>
-          <th scope="col">Link</th>
-        </tr>
-      </thead>
-      <tbody>
-        {animalInfos.map(animal => (
-          <tr key={animal.type}>
-            <th scope="row">{animal.type}</th>
-            <td>{animal.count}</td>
-            <td>
-              <a href={`https://www.google.com/search?q=${animal.type}`}>
-                Search
-              </a>
+    <div className="animal-list">
+      <table>
+        <caption>Rare Animals</caption>
+        <thead>
+          <tr>
+            <th scope="col">Type</th>
+            <th scope="col">Count</th>
+            <th scope="col">Link</th>
+          </tr>
+        </thead>
+        <tbody>
+          {animalInfos.map(animal => (
+            <tr key={animal.type}>
+              <th scope="row">{animal.type}</th>
+              <td>{animal.count}</td>
+              <td>
+                <a href={`https://www.google.com/search?q=${animal.type}`}>
+                  Search
+                </a>
+              </td>
+            </tr>
+          ))}
+        </tbody>
+        <tfoot>
+          <tr>
+            <th scope="row">Total</th>
+            <td colspan="2">
+              {animalInfos.reduce((acc, animal) => acc + animal.count, 0)}
             </td>
           </tr>
-        ))}
-      </tbody>
-      <tfoot>
-        <tr>
-          <th scope="row">Total</th>
-          <td colspan="2">
-            {animalInfos.reduce((acc, animal) => acc + animal.count, 0)}
-          </td>
-        </tr>
-      </tfoot>
-    </table>
+        </tfoot>
+      </table>
+    </div>
   );
 }
