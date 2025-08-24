@@ -1,0 +1,33 @@
+const animalsDemoData = [
+  { type: 'Malayan Tiger', count: 787 },
+  { type: 'Mountain Gorilla', count: 212 },
+  { type: 'Fin Whale', count: 28 },
+];
+
+export function AnimalList({ animalInfos = animalsDemoData }) {
+  return (
+    <table>
+      <caption>Rare Animals</caption>
+      <thead>
+        <tr>
+          <th scope="col">Type</th>
+          <th scope="col">Count</th>
+          <th scope="col">Link</th>
+        </tr>
+      </thead>
+      <tbody>
+        {animalInfos.map(animal => (
+          <tr key={animal.type}>
+            <th scope="row">{animal.type}</th>
+            <td>{animal.count}</td>
+            <td>
+              <a href={`https://www.google.com/search?q=${animal.type}`}>
+                Search
+              </a>
+            </td>
+          </tr>
+        ))}
+      </tbody>
+    </table>
+  );
+}
