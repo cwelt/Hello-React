@@ -16,36 +16,50 @@ Explore timers, clocks, lists, modals, and more—all styled for a great user ex
 
 ---
 
+## 🌐 Live Demo
+
+Check out the deployed version on **GitHub Pages**:  
+👉 [https://cwelt.github.io/Hello-React/](https://cwelt.github.io/Hello-React/)
+
+---
+
 ## 🧩 Components Overview
 
-### 1. **AppHeader**  
+### 1. **AppHeader**
+
 > 🧭 **Navigation bar**  
-Displays the app title and navigation links. Highlights the active page for clarity.
+> Displays the app title and navigation links. Highlights the active page for clarity.
 
-### 2. **Home**  
+### 2. **Home**
+
 > 🏠 **Landing page**  
-Welcomes users and explains navigation.  
-Shows a friendly greeting and instructions.
+> Welcomes users and explains navigation.  
+> Shows a friendly greeting and instructions.
 
-### 3. **AnimalList**  
+### 3. **AnimalList**
+
 > 🐾 **Animal showcase**  
-Displays a list/grid of animals, each with a name and image.  
-Great for demonstrating dynamic lists and mapping over data.
+> Displays a list/grid of animals, each with a name and image.  
+> Great for demonstrating dynamic lists and mapping over data.
 
-### 4. **SeasonClock**  
+### 4. **SeasonClock**
+
 > 🌦️ **Seasonal clock**  
-Shows the current season and time, updating live.  
-Visualizes how to use timers and date logic in React.
+> Shows the current season and time, updating live.  
+> Visualizes how to use timers and date logic in React.
 
-### 5. **CountDown**  
+### 5. **CountDown**
+
 > ⏳ **Countdown timer**  
-Lets users start a countdown.  
-Plays an audio alert when time is up (with user permission).  
-Shows time left in a styled clock.
+> Lets users start a countdown.  
+> Plays an audio alert when time is up (with user permission).  
+> Shows time left in a styled clock.
 
-### 6. **WatcherApp**  
+### 6. **WatcherApp**
+
 > 👀 **Watcher management**  
-Displays a grid of "watchers" (users/entities) with:
+> Displays a grid of "watchers" (users/entities) with:
+
 - Name
 - Image
 - Divider
@@ -101,4 +115,4 @@ Made with ❤️ using React, CSS, and a sprinkle of creativity!
 ---
 
 Enjoy exploring and learning from this starter project!  
-Feel free to customize, extend, and share your own
+Feel free to customize, extend, and share your own components! 🚀
