@@ -13,14 +13,7 @@ export function Home() {
       <h2>Home Sweet Home</h2>
       {false && <AnimalList />}
       {false && <SeasonClock />}
-      <CountDown
-        startFrom={7}
-        toTime={Date.now() + 1000 * 3601}
-        onDone={el => {
-          utilService.animateCSS(el);
-          new Audio('../assets/audio/the-final-countdown.mp3').play();
-        }}
-      />
+      <CountDown startFrom={10} />
     </section>
   );
 }
