@@ -71,7 +71,10 @@ function CountDown({ startFrom = 10, onDone = handleOnCountDownEnd, toTime }) {
           </label>
         </section>
         <audio ref={elAudio}>
+          <source src="../assets/audio/alarm.mp3" type="audio/mpeg" />
           <source src="/assets/audio/alarm.mp3" type="audio/mpeg" />
+          <source src="/proj-basics/assets/audio/alarm.mp3" type="audio/mpeg" />
+          <source src="/Hello-React/assets/audio/alarm.mp3" type="audio/mpeg" />
         </audio>
       </div>
     </section>
