@@ -6,6 +6,7 @@
 @import url(base/base.css);
 @import url(cmps/animal-list.css);
 @import url(cmps/season-clock.css);
+@import url(cmps/count-down.css);
 
 @media (max-width: 720px) {
   .app-header {
