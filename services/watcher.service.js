@@ -72,7 +72,7 @@ function _createWatchers() {
       'Ozzy Osbourne',
       'Eric Clapton',
       'Bruce Springsteen',
-      'Roger Waters',
+      'David Gilmour',
     ];
     const movies = [
       'The Shawshank Redemption',
