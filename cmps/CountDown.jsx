@@ -16,6 +16,7 @@ function CountDown({ startFrom = 10, onDone = handleOnCountDownEnd, toTime }) {
   // references for DOM elements & interval ID
   const elClock = useRef(null); // for animation of clock once countdown is over
   const elAudio = useRef(null); // for playing audio file once countdown ends
+  const elAudioEnableBtn = useRef(null); // for enable/disable audio button
   const intervalIdRef = useRef(null); // for clearing interval once countdown ends
 
   // set interval on mount to initialize countdown
@@ -32,6 +33,7 @@ function CountDown({ startFrom = 10, onDone = handleOnCountDownEnd, toTime }) {
   useEffect(() => {
     if (timeLeft <= 0) {
       clearInterval(intervalIdRef.current);
+      elAudioEnableBtn.current.style.display = 'none'; // disable audio enable/disable button
       onDone(elClock.current, elAudio.current, isAudioEnabled);
     }
   }, [timeLeft]);
@@ -54,20 +56,22 @@ function CountDown({ startFrom = 10, onDone = handleOnCountDownEnd, toTime }) {
         </h2>
       </div>
       <div className="count-down-audio">
-        <button
-          id="btnAudio"
-          onClick={() => setIsAudioEnabled(!isAudioEnabled)}
-          title="Click to enable/disable audio alert then countdown ends."
-        >
-          {isAudioEnabled ? '🔊' : '🔇'}
-        </button>
-        <label htmlFor="btnAudio">
-          {'Click to '}
-          {isAudioEnabled ? <em>disable</em> : <em>enable</em>}
-          {' when countdown ends.'}
-        </label>
+        <section ref={elAudioEnableBtn}>
+          <button
+            id="btnAudio"
+            onClick={() => setIsAudioEnabled(!isAudioEnabled)}
+            title="Click to enable/disable audio alert then countdown ends."
+          >
+            {isAudioEnabled ? '🔊' : '🔇'}
+          </button>
+          <label htmlFor="btnAudio">
+            {'Click to '}
+            {isAudioEnabled ? <em>disable</em> : <em>enable</em>}
+            {' audio alert'}
+          </label>
+        </section>
         <audio ref={elAudio}>
-          <source src="../assets/audio/alarm.mp3" type="audio/mpeg" />
+          <source src="/assets/audio/alarm.mp3" type="audio/mpeg" />
         </audio>
       </div>
     </section>

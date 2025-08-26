@@ -13,7 +13,7 @@ export function Home() {
       <h2>Home Sweet Home</h2>
       {false && <AnimalList />}
       {false && <SeasonClock />}
-      <CountDown startFrom={10} />
+      <CountDown startFrom={3} />
     </section>
   );
 }
