@@ -49,6 +49,10 @@ export function WatcherApp() {
       });
   }
 
+  function handleCloseModal() {
+    setSelectedWatcher(null);
+  }
+
   if (!watchers || watchers.length === 0)
     return (
       <div>
@@ -69,7 +73,7 @@ export function WatcherApp() {
       </div>
       <ul className="watcher-app-container">
         {watchers.map(watcher => (
-          <li key={watcher.id} onClick={() => setSelectedWatcher(watcher)}>
+          <li key={watcher.id}>
             <article className="watch-entity">
               <h2 className="watch-name">{watcher.fullname}</h2>
               <img
@@ -85,12 +89,45 @@ export function WatcherApp() {
                 >
                   x
                 </button>
-                <button className="watch-btn select">Select</button>
+                <button
+                  className="watch-btn select"
+                  onClick={() => setSelectedWatcher(watcher)}
+                >
+                  Select
+                </button>
               </div>
             </article>
           </li>
         ))}
       </ul>
+      {/* Modal shown if selectedWatcher is not null */}
+      {selectedWatcher && (
+        <div
+          className="watcher-modal-backdrop"
+          onClick={handleCloseModal}
+          tabIndex={-1}
+        >
+          <div
+            className="watcher-modal"
+            onClick={ev => ev.stopPropagation()}
+            tabIndex={0}
+          >
+            <button className="modal-close-btn" onClick={handleCloseModal}>
+              ×
+            </button>
+            <h2>{selectedWatcher.fullname}'s Movies</h2>
+            <ul>
+              {selectedWatcher.movies && selectedWatcher.movies.length > 0 ? (
+                selectedWatcher.movies.map((movie, idx) => (
+                  <li key={idx}>{movie}</li>
+                ))
+              ) : (
+                <li>No movies listed.</li>
+              )}
+            </ul>
+          </div>
+        </div>
+      )}
     </section>
   );
 }
