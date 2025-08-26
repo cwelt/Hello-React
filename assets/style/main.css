@@ -8,6 +8,7 @@
 @import url(cmps/season-clock.css);
 @import url(cmps/count-down.css);
 @import url(cmps/watcher-app.css);
+@import url(cmps/app-header.css);
 
 @media (max-width: 720px) {
   .app-header {
